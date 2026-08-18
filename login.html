@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Sign In</title>
+  <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+  
+  <link rel="stylesheet" href="style.css?v=20260817">
+  <link rel="stylesheet" href="login.css?v=20260817">
+  <style>
+    .login-body {
+      min-height: 100vh;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.85) 100%),
+                  radial-gradient(ellipse at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%),
+                  url('https://assets.nflxext.com/ffe/siteui/v8/GDF/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body class="login-body">
+
+  <!-- Header -->
+  <header class="login-header">
+    <a href="index.html" class="netflix-logo" aria-label="Netflix">
+      <img class="netflix-wordmark" src="assets/netflix-wordmark.svg" alt="" aria-hidden="true">
+    </a>
+
+    <!-- Header Language Selector (English & Hindi ONLY) -->
+    <div class="language-picker-box">
+      <span class="language-globe-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+        </svg>
+      </span>
+      <select class="language-select" aria-label="Language Selector">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+      </select>
+      <span class="language-caret"></span>
+    </div>
+  </header>
+
+  <!-- Login Card -->
+  <main class="login-wrapper">
+    <div class="login-card">
+      <h1 class="login-title" data-lang-key="signIn">Sign In</h1>
+
+      <form id="login-form" class="login-form">
+        <div class="input-field">
+          <input type="text" class="form-control" placeholder=" " required>
+          <label class="input-label">Email or phone number</label>
+        </div>
+
+        <div class="input-field">
+          <input type="password" class="form-control" placeholder=" " required>
+          <label class="input-label">Password</label>
+        </div>
+
+        <button type="submit" class="btn-login" data-lang-key="signIn">Sign In</button>
+
+        <div class="login-options">
+          <label class="remember-me">
+            <input type="checkbox" checked>
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="help-link" onclick="alert('Password reset link sent to your registered email address!')">Forgot password?</a>
+        </div>
+      </form>
+
+      <div class="login-footer-text">
+        <div>
+          New to Netflix? <a href="signup.html" class="signup-now-text">Sign up now.</a>
+        </div>
+        <p class="recaptcha-text" style="font-size: 0.8rem; color: #8c8c8c;">
+          This page is protected by Google reCAPTCHA to ensure you're not a bot.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Full Width Spread Login Footer -->
+  <footer class="netflix-footer" style="background: rgba(0, 0, 0, 0.75); margin-top: 0;">
+    <p class="footer-questions"><span data-lang-key="questionsCall">Questions? Call 1-800-012-3456</span></p>
+
+    <ul class="footer-links-grid">
+      <li class="footer-link-item"><a href="#">FAQ</a></li>
+      <li class="footer-link-item"><a href="#">Help Center</a></li>
+      <li class="footer-link-item"><a href="#">Terms of Use</a></li>
+      <li class="footer-link-item"><a href="#">Privacy</a></li>
+      <li class="footer-link-item"><a href="#">Cookie Preferences</a></li>
+      <li class="footer-link-item"><a href="#">Corporate Information</a></li>
+    </ul>
+
+    <!-- Footer Language Selector (English & Hindi) -->
+    <div class="language-picker-box" style="align-self: flex-start;">
+      <span class="language-globe-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+        </svg>
+      </span>
+      <select class="language-select" aria-label="Language Selector">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+      </select>
+      <span class="language-caret"></span>
+    </div>
+
+    <div class="footer-copyright">&copy; 1997-2026 Netflix, Inc. &bull; Netflix Clone</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

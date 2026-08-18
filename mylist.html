@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - My List</title>
+  <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+  
+  <link rel="stylesheet" href="style.css?v=20260817">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="netflix-header" style="background-color: #141414;">
+    <div class="header-left">
+      <a href="home.html" class="netflix-logo" aria-label="Netflix">
+        <img class="netflix-wordmark" src="assets/netflix-wordmark.svg" alt="" aria-hidden="true">
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-item"><a href="home.html" data-lang-key="home">Home</a></li>
+        <li class="nav-item"><a href="search.html">Search</a></li>
+        <li class="nav-item active"><a href="mylist.html" data-lang-key="myList">My List</a></li>
+      </ul>
+    </div>
+
+    <div class="header-right">
+      <div class="profile-menu-container">
+        <div class="profile-trigger">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23148f77' rx='12'/><circle cx='48' cy='64' r='8' fill='%23ffffff'/><circle cx='112' cy='64' r='8' fill='%23ffffff'/><path d='M 40 100 Q 80 130 120 100' stroke='%23ffffff' stroke-width='9' fill='none' stroke-linecap='round'/></svg>" class="avatar-img" alt="Avatar">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- My List Grid -->
+  <main class="media-grid-section">
+    <h1 class="grid-title" data-lang-key="myList">My List</h1>
+    <div id="mylist-grid" class="media-grid"></div>
+  </main>
+
+  <div id="global-movie-modal" class="global-modal-overlay"></div>
+  <div id="global-video-player-modal" class="video-player-overlay"></div>
+
+  <script src="app.js"></script>
+  <script>
+    function renderMyListGrid() {
+      const container = document.getElementById("mylist-grid");
+      if (!container) return;
+
+      const mylistIds = getMyList();
+      const movies = MOVIES_DATABASE.filter(m => mylistIds.includes(m.id));
+
+      if (movies.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 80px 0; color: #808080;">
+            <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 12px;">You haven't added any titles to your list yet.</h3>
+            <p>Explore <a href="home.html" style="color: var(--netflix-red); text-decoration: underline;">Home</a> or <a href="search.html" style="color: var(--netflix-red); text-decoration: underline;">Search</a> to save your favorite shows.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = movies.map(movie => `
+        <div class="movie-card">
+          <div class="movie-card-inner">
+            <img src="${movie.poster}" class="poster-img" alt="${movie.title}" loading="lazy">
+          </div>
+          <div class="card-hover-details">
+            <div class="hover-actions">
+              <div class="hover-btn-group">
+                <button class="circle-btn circle-btn-play" onclick="playMovieVideo('${movie.id}')" title="Play Video">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </button>
+                <button class="circle-btn active" onclick="removeFromMyListGrid('${movie.id}')" title="Remove from My List">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
+              <button class="circle-btn" onclick="openMovieModal('${movie.id}')" title="More Info">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </div>
+            <h4 class="hover-title">${movie.title}</h4>
+            <div class="hover-meta">
+              <span class="match-score">${movie.match}</span>
+              <span class="badge">${movie.rating}</span>
+              <span class="badge badge-hd">${movie.quality}</span>
+            </div>
+            <div class="hover-tags">
+              <span>${movie.genre.join(' • ')}</span>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function removeFromMyListGrid(id) {
+      removeFromMyList(id);
+      renderMyListGrid();
+    }
+
+    document.addEventListener("DOMContentLoaded", renderMyListGrid);
+    window.addEventListener("mylist_updated", renderMyListGrid);
+  </script>
+</body>
+</html>

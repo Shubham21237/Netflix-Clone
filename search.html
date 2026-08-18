@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Search & Discover</title>
+  <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+  
+  <link rel="stylesheet" href="style.css?v=20260817">
+  <link rel="stylesheet" href="home.css">
+  <style>
+    .genre-pills { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+    .genre-pill {
+      padding: 8px 18px; background: #222; border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px; font-size: 0.9rem; cursor: pointer; color: var(--text-gray-light); transition: all 0.2s ease;
+    }
+    .genre-pill.active, .genre-pill:hover { background: #fff; color: #000; border-color: #fff; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="netflix-header" style="background-color: #141414;">
+    <div class="header-left">
+      <a href="home.html" class="netflix-logo" aria-label="Netflix">
+        <img class="netflix-wordmark" src="assets/netflix-wordmark.svg" alt="" aria-hidden="true">
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-item"><a href="home.html" data-lang-key="home">Home</a></li>
+        <li class="nav-item active"><a href="search.html">Search</a></li>
+        <li class="nav-item"><a href="mylist.html" data-lang-key="myList">My List</a></li>
+      </ul>
+    </div>
+
+    <div class="header-right">
+      <div class="profile-menu-container">
+        <div class="profile-trigger">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" class="avatar-img" alt="Avatar">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Main View -->
+  <main class="media-grid-section">
+    <div style="max-width: 600px; margin-bottom: 25px; position: relative;">
+      <input type="text" id="page-search-input" class="form-control" placeholder="Search by title, genre, actor..." style="height: 54px; padding-left: 20px; font-size: 1.1rem; background: #222; border-color: #444;">
+    </div>
+
+    <div class="genre-pills">
+      <button class="genre-pill active" data-genre="All">All</button>
+      <button class="genre-pill" data-genre="Action">Action</button>
+      <button class="genre-pill" data-genre="Sci-Fi">Sci-Fi</button>
+      <button class="genre-pill" data-genre="Horror">Horror</button>
+      <button class="genre-pill" data-genre="Anime">Anime</button>
+      <button class="genre-pill" data-genre="Thriller">Thriller</button>
+      <button class="genre-pill" data-genre="Drama">Drama</button>
+      <button class="genre-pill" data-genre="Bollywood">Bollywood</button>
+      <button class="genre-pill" data-genre="Comedy">Comedy</button>
+    </div>
+
+    <h2 id="search-query-title" class="grid-title">Explore Catalog</h2>
+
+    <div id="search-results-grid" class="media-grid"></div>
+  </main>
+
+  <div id="global-movie-modal" class="global-modal-overlay"></div>
+  <div id="global-video-player-modal" class="video-player-overlay"></div>
+
+  <script src="app.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

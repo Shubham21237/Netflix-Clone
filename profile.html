@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Who's Watching?</title>
+  <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+  <link rel="stylesheet" href="style.css?v=20260817">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body style="background-color: #141414;">
+
+  <div class="profile-select-body">
+    <h1 class="profile-title" data-lang-key="whosWatching">Who's watching?</h1>
+
+    <div class="profiles-container">
+      <!-- Profile 1: Shubham (Teal Netflix Smiley Avatar) -->
+      <div class="profile-card" data-profile-name="Shubham" data-profile-avatar="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23148f77' rx='12'/><circle cx='48' cy='64' r='8' fill='%23ffffff'/><circle cx='112' cy='64' r='8' fill='%23ffffff'/><path d='M 40 100 Q 80 130 120 100' stroke='%23ffffff' stroke-width='9' fill='none' stroke-linecap='round'/></svg>" data-is-kids="false">
+        <div class="profile-avatar-box">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23148f77' rx='12'/><circle cx='48' cy='64' r='8' fill='%23ffffff'/><circle cx='112' cy='64' r='8' fill='%23ffffff'/><path d='M 40 100 Q 80 130 120 100' stroke='%23ffffff' stroke-width='9' fill='none' stroke-linecap='round'/></svg>" alt="Shubham">
+        </div>
+        <span class="profile-name">Shubham</span>
+      </div>
+
+      <!-- Profile 2: Kids (Golden Yellow Cartoon Avatar) -->
+      <div class="profile-card" data-profile-name="Kids" data-profile-avatar="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23e5b009' rx='12'/><circle cx='52' cy='60' r='10' fill='%23141414'/><circle cx='108' cy='60' r='10' fill='%23141414'/><path d='M 45 95 Q 80 135 115 95 Z' fill='%23141414'/><path d='M 60 102 Q 80 115 100 102' stroke='%23e50914' stroke-width='4' fill='none'/></svg>" data-is-kids="true">
+        <div class="profile-avatar-box">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23e5b009' rx='12'/><circle cx='52' cy='60' r='10' fill='%23141414'/><circle cx='108' cy='60' r='10' fill='%23141414'/><path d='M 45 95 Q 80 135 115 95 Z' fill='%23141414'/><path d='M 60 102 Q 80 115 100 102' stroke='%23e50914' stroke-width='4' fill='none'/></svg>" alt="Kids">
+        </div>
+        <span class="profile-name">Kids</span>
+      </div>
+
+      <!-- Profile 3: Guest (Royal Blue Netflix Avatar) -->
+      <div class="profile-card" data-profile-name="Guest" data-profile-avatar="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%231e53e5' rx='12'/><circle cx='48' cy='64' r='8' fill='%23ffffff'/><circle cx='112' cy='64' r='8' fill='%23ffffff'/><path d='M 40 100 Q 80 130 120 100' stroke='%23ffffff' stroke-width='9' fill='none' stroke-linecap='round'/></svg>" data-is-kids="false">
+        <div class="profile-avatar-box">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%231e53e5' rx='12'/><circle cx='48' cy='64' r='8' fill='%23ffffff'/><circle cx='112' cy='64' r='8' fill='%23ffffff'/><path d='M 40 100 Q 80 130 120 100' stroke='%23ffffff' stroke-width='9' fill='none' stroke-linecap='round'/></svg>" alt="Guest">
+        </div>
+        <span class="profile-name">Guest</span>
+      </div>
+    </div>
+
+    <button class="btn-manage-profiles" onclick="alert('Manage Profiles')">Manage Profiles</button>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

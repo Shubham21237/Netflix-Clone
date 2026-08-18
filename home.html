@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Home</title>
+  <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+  
+  <link rel="stylesheet" href="style.css?v=20260817">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <!-- Streaming Header -->
+  <header class="netflix-header">
+    <div class="header-left">
+      <a href="home.html" class="netflix-logo" aria-label="Netflix">
+        <img class="netflix-wordmark" src="assets/netflix-wordmark.svg" alt="" aria-hidden="true">
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-item active"><a href="home.html" data-lang-key="home">Home</a></li>
+        <li class="nav-item"><a href="search.html?genre=Sci-Fi" data-lang-key="tvShows">TV Shows</a></li>
+        <li class="nav-item"><a href="search.html?genre=Action" data-lang-key="movies">Movies</a></li>
+        <li class="nav-item"><a href="search.html" data-lang-key="newPopular">New & Popular</a></li>
+        <li class="nav-item"><a href="mylist.html" data-lang-key="myList">My List</a></li>
+      </ul>
+    </div>
+
+    <div class="header-right">
+      <div class="search-box">
+        <span class="search-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input type="text" class="search-input" placeholder="Search titles, genres..." data-lang-key="searchPlaceholder">
+      </div>
+
+      <!-- Header Language Selector -->
+      <div class="language-picker-box">
+        <span class="language-globe-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+          </svg>
+        </span>
+        <select class="language-select" aria-label="Language Selector">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी (Hindi)</option>
+        </select>
+        <span class="language-caret"></span>
+      </div>
+
+      <!-- Notification Bell -->
+      <div class="notification-container">
+        <button class="icon-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="notification-badge"></span>
+        </button>
+
+        <div class="notification-popover">
+          <div class="notification-header">Notifications</div>
+          <div class="notification-item">
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=200&q=80" class="notification-thumb" alt="Arrival">
+            <div class="notification-text"><p>New Arrival: Stranger Things 5</p><span>Just now</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Profile (Shubham Default) -->
+      <div class="profile-menu-container">
+        <div class="profile-trigger">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23148f77' rx='12'/><circle cx='48' cy='64' r='8' fill='%23ffffff'/><circle cx='112' cy='64' r='8' fill='%23ffffff'/><path d='M 40 100 Q 80 130 120 100' stroke='%23ffffff' stroke-width='9' fill='none' stroke-linecap='round'/></svg>" class="avatar-img" alt="Avatar">
+          <span class="caret-icon"></span>
+        </div>
+
+        <div class="profile-dropdown">
+          <ul class="profile-list">
+            <li class="profile-item" onclick="window.location.href='profile.html'">
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23148f77' rx='12'/><circle cx='48' cy='64' r='8' fill='%23ffffff'/><circle cx='112' cy='64' r='8' fill='%23ffffff'/><path d='M 40 100 Q 80 130 120 100' stroke='%23ffffff' stroke-width='9' fill='none' stroke-linecap='round'/></svg>" class="avatar-img" alt="User">
+              <span id="nav-profile-name" data-lang-key="switchProfiles">Shubham</span>
+            </li>
+          </ul>
+          <ul class="profile-links">
+            <li class="profile-link-item"><a href="mylist.html" data-lang-key="myList">My List</a></li>
+            <li class="profile-link-item"><a href="profile.html" data-lang-key="whosWatching">Who's watching?</a></li>
+          </ul>
+          <div class="profile-signout">
+            <li class="profile-link-item"><a href="login.html" data-lang-key="signOut">Sign out of Netflix</a></li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Billboard -->
+  <main>
+    <section class="hero-billboard">
+      <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80" class="hero-bg" alt="Stranger Things 5">
+      
+      <div class="hero-vignette-left"></div>
+      <div class="hero-vignette-bottom"></div>
+
+      <div class="hero-content">
+        <div class="hero-series-tag">
+          <span class="n-logo-icon">N</span><span>S E R I E S</span>
+        </div>
+
+        <h1 class="hero-title">STRANGER THINGS 5</h1>
+
+        <div class="hero-meta">
+          <span class="match-score">99% Match</span>
+          <span>2026</span>
+          <span class="badge badge-red">16+</span>
+          <span class="badge badge-hd">4K ULTRA HD</span>
+        </div>
+
+        <p class="hero-description">
+          When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-hero btn-play" onclick="playMovieVideo('stranger-things')">
+            <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></span> 
+            <span data-lang-key="playBtn">Play</span>
+          </button>
+          
+          <!-- Crisp & Perfectly Centered Netflix "i" Info Icon -->
+          <button class="btn-hero btn-info" onclick="openMovieModal('stranger-things')">
+            <span class="btn-icon" style="display: flex; align-items: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="11.5"></line>
+                <circle cx="12" cy="7.8" r="1.2" fill="currentColor"></circle>
+              </svg>
+            </span> 
+            <span data-lang-key="moreInfoBtn">More Info</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carousel Rows -->
+    <section class="category-slider-section">
+
+      <!-- Row 1: Trending Now -->
+      <div class="slider-row">
+        <div class="slider-header">
+          <h2 class="slider-title" data-lang-key="trendingTitle">Trending Now</h2>
+        </div>
+        <div class="slider-container">
+          <button class="slider-btn slider-btn-left" aria-label="Previous">&lsaquo;</button>
+          <div class="slider-track" id="trending-track"></div>
+          <button class="slider-btn slider-btn-right" aria-label="Next">&rsaquo;</button>
+        </div>
+      </div>
+
+      <!-- Row 2: Top 10 Today -->
+      <div class="slider-row">
+        <div class="slider-header">
+          <h2 class="slider-title" data-lang-key="top10Title">Top 10 Shows Today</h2>
+        </div>
+        <div class="slider-container">
+          <button class="slider-btn slider-btn-left" aria-label="Previous">&lsaquo;</button>
+          <div class="slider-track" id="top10-track"></div>
+          <button class="slider-btn slider-btn-right" aria-label="Next">&rsaquo;</button>
+        </div>
+      </div>
+
+      <!-- Row 3: Action & Sci-Fi Blockbusters -->
+      <div class="slider-row">
+        <div class="slider-header">
+          <h2 class="slider-title" data-lang-key="actionTitle">Action & Sci-Fi Blockbusters</h2>
+        </div>
+        <div class="slider-container">
+          <button class="slider-btn slider-btn-left" aria-label="Previous">&lsaquo;</button>
+          <div class="slider-track" id="action-track"></div>
+          <button class="slider-btn slider-btn-right" aria-label="Next">&rsaquo;</button>
+        </div>
+      </div>
+
+      <!-- Row 4: Popular Originals -->
+      <div class="slider-row">
+        <div class="slider-header">
+          <h2 class="slider-title">Popular Originals & Fan Favorites</h2>
+        </div>
+        <div class="slider-container">
+          <button class="slider-btn slider-btn-left" aria-label="Previous">&lsaquo;</button>
+          <div class="slider-track" id="popular-track"></div>
+          <button class="slider-btn slider-btn-right" aria-label="Next">&rsaquo;</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Global Modal Popup -->
+  <div id="global-movie-modal" class="global-modal-overlay"></div>
+
+  <!-- Global Video Player Popup -->
+  <div id="global-video-player-modal" class="video-player-overlay"></div>
+
+  <!-- Wide-Spread Home Streaming Footer -->
+  <footer class="netflix-footer">
+    <p class="footer-questions"><span data-lang-key="questionsCall">Questions? Call 1-800-012-3456</span></p>
+
+    <ul class="footer-links-grid">
+      <li class="footer-link-item"><a href="#">Audio Description</a></li>
+      <li class="footer-link-item"><a href="#">Help Center</a></li>
+      <li class="footer-link-item"><a href="#">Gift Cards</a></li>
+      <li class="footer-link-item"><a href="#">Media Center</a></li>
+      <li class="footer-link-item"><a href="#">Investor Relations</a></li>
+      <li class="footer-link-item"><a href="#">Jobs</a></li>
+      <li class="footer-link-item"><a href="#">Terms of Use</a></li>
+      <li class="footer-link-item"><a href="#">Privacy</a></li>
+      <li class="footer-link-item"><a href="#">Legal Notices</a></li>
+      <li class="footer-link-item"><a href="#">Cookie Preferences</a></li>
+      <li class="footer-link-item"><a href="#">Corporate Information</a></li>
+      <li class="footer-link-item"><a href="#">Contact Us</a></li>
+    </ul>
+
+    <button class="service-code-btn" onclick="alert('Netflix Service Code: 839-204')">Service Code</button>
+
+    <div class="language-picker-box" style="align-self: flex-start;">
+      <span class="language-globe-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </span>
+      <select class="language-select" aria-label="Language Selector">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+      </select>
+      <span class="language-caret"></span>
+    </div>
+
+    <div class="footer-copyright">&copy; 1997-2026 Netflix, Inc. &bull; Netflix Clone</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="add.js"></script>
+  <script src="browse.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+/* ==========================================================================
+   NETFLIX CLONE - LOGIN & SIGNUP STYLES (login.css)
+   ========================================================================== */
+
+.login-body {
+  min-height: 100vh;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.8) 100%),
+              url('https://assets.nflxext.com/ffe/siteui/v8/GDF/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-header {
+  padding: 24px 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-header .netflix-logo .netflix-wordmark {
+  height: 38px;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 60px 68px 40px 68px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-field {
+  position: relative;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  height: 50px;
+  padding: 16px 20px 0 16px;
+  background: #333333;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text-white);
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.form-control:focus {
+  background: #454545;
+  border-color: #ffffff;
+}
+
+.input-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8c8c8c;
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: transform 0.2s ease, font-size 0.2s ease, top 0.2s ease;
+}
+
+.form-control:focus ~ .input-label,
+.form-control:not(:placeholder-shown) ~ .input-label {
+  top: 14px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.btn-login {
+  height: 48px;
+  width: 100%;
+  background-color: var(--netflix-red);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: var(--netflix-red-hover);
+}
+
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.help-link {
+  color: #b3b3b3;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+.login-footer-text {
+  font-size: 0.95rem;
+  color: #737373;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.signup-now-text {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.signup-now-text:hover {
+  text-decoration: underline;
+}

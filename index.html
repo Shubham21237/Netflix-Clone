@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
+  <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+  
+  <link rel="stylesheet" href="style.css?v=20260817">
+  <link rel="stylesheet" href="home.css">
+  <style>
+    /* Local cinematic background with a soft, transparent Netflix wordmark. */
+    .landing-hero-wrapper {
+      position: relative;
+      height: 100vh;
+      min-height: 650px;
+      isolation: isolate;
+      overflow: hidden;
+      background: #000 url('assets/landing-hero-background.png') center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .landing-hero-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.36) 60%, rgba(0, 0, 0, 0.82) 100%),
+                  radial-gradient(ellipse at center, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.55) 100%);
+    }
+
+    .landing-hero-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: url('assets/netflix-wordmark.svg') center / min(74vw, 760px) auto no-repeat;
+      opacity: 0.14;
+      pointer-events: none;
+    }
+
+    .landing-hero-wrapper > .hero-content {
+      position: relative !important;
+      z-index: 2;
+    }
+
+    @media (max-width: 800px) {
+      .landing-hero-wrapper::after {
+        background-size: min(88vw, 620px) auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Landing Header -->
+  <header class="netflix-header" style="position: absolute; background: transparent;">
+    <div class="header-left">
+      <a href="index.html" class="netflix-logo" aria-label="Netflix">
+        <img class="netflix-wordmark" src="assets/netflix-wordmark.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+
+    <div class="header-right">
+      <!-- Language Picker (English & Hindi ONLY) -->
+      <div class="language-picker-box">
+        <span class="language-globe-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </span>
+        <select class="language-select" aria-label="Language Selector">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी (Hindi)</option>
+        </select>
+        <span class="language-caret"></span>
+      </div>
+
+      <a href="login.html" class="btn-hero btn-play" style="padding: 7px 18px; font-size: 0.9rem; background-color: var(--netflix-red); color: #fff;" data-lang-key="signIn">Sign In</a>
+    </div>
+  </header>
+
+  <!-- Landing Hero Section -->
+  <section class="landing-hero-wrapper">
+    <div class="hero-content" style="width: 100%; max-width: 900px; position: static; text-align: center; align-items: center; gap: 24px; padding: 0 20px;">
+      <h1 class="hero-title" style="font-size: 3.6rem; font-weight: 900;" data-lang-key="heroTitle">Unlimited movies, TV shows, and more</h1>
+      <p style="font-size: 1.55rem; font-weight: 500;" data-lang-key="heroSub">Watch anywhere. Cancel anytime.</p>
+
+      <div class="cta-email-box">
+        <p class="cta-text" data-lang-key="ctaPrompt">Ready to watch? Enter your email to create or restart your membership.</p>
+        
+        <form class="email-form" action="signup.html">
+          <input type="email" class="email-input" placeholder="Email address" required>
+          <button type="submit" class="btn-cta">
+            <span data-lang-key="getStarted">Get Started</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="feature-divider"></div>
+
+  <!-- Features Section -->
+  <section class="feature-section">
+    <div class="feature-container">
+      <div class="feature-text">
+        <h2 class="feature-title" data-lang-key="enjoyTv">Enjoy on your TV</h2>
+        <p class="feature-subtitle" data-lang-key="enjoyTvSub">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+      </div>
+      <div class="feature-media">
+        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80" class="feature-img" alt="Enjoy on TV">
+      </div>
+    </div>
+  </section>
+
+  <div class="feature-divider"></div>
+
+  <section class="feature-section">
+    <div class="feature-container reverse">
+      <div class="feature-text">
+        <h2 class="feature-title" data-lang-key="downloadOffline">Download your shows to watch offline</h2>
+        <p class="feature-subtitle" data-lang-key="downloadOfflineSub">Save your favorites easily and always have something to watch.</p>
+      </div>
+      <div class="feature-media">
+        <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=800&q=80" class="feature-img" alt="Download offline">
+        <div class="download-card">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=100&q=80" class="download-thumb" alt="Stranger Things">
+          <div class="download-info">
+            <span class="download-title">Stranger Things</span>
+            <span class="download-status">Downloading...</span>
+          </div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0071eb" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="feature-divider"></div>
+
+  <section class="feature-section">
+    <div class="feature-container">
+      <div class="feature-text">
+        <h2 class="feature-title" data-lang-key="watchEverywhere">Watch everywhere</h2>
+        <p class="feature-subtitle" data-lang-key="watchEverywhereSub">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+      </div>
+      <div class="feature-media">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" class="feature-img" alt="Watch Everywhere">
+      </div>
+    </div>
+  </section>
+
+  <div class="feature-divider"></div>
+
+  <section class="feature-section">
+    <div class="feature-container reverse">
+      <div class="feature-text">
+        <h2 class="feature-title" data-lang-key="kidsProfiles">Create profiles for kids</h2>
+        <p class="feature-subtitle" data-lang-key="kidsProfilesSub">Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</p>
+      </div>
+      <div class="feature-media">
+        <img src="https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?auto=format&fit=crop&w=800&q=80" class="feature-img" alt="Kids Profiles">
+      </div>
+    </div>
+  </section>
+
+  <div class="feature-divider"></div>
+
+  <!-- FAQ Accordion -->
+  <section class="faq-section">
+    <h2 class="faq-title" data-lang-key="faqTitle">Frequently Asked Questions</h2>
+
+    <ul class="faq-list">
+      <li class="faq-item">
+        <input type="checkbox" id="faq-1" class="faq-toggle">
+        <label for="faq-1" class="faq-label">
+          <span>What is Netflix?</span><span class="faq-icon">+</span>
+        </label>
+        <div class="faq-content">
+          <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <input type="checkbox" id="faq-2" class="faq-toggle">
+        <label for="faq-2" class="faq-label">
+          <span>How much does Netflix cost?</span><span class="faq-icon">+</span>
+        </label>
+        <div class="faq-content">
+          <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from basic to premium. No extra costs, no contracts.</p>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <input type="checkbox" id="faq-3" class="faq-toggle">
+        <label for="faq-3" class="faq-label">
+          <span>Where can I watch?</span><span class="faq-icon">+</span>
+        </label>
+        <div class="faq-content">
+          <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com or on any internet-connected device offering the Netflix app.</p>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <input type="checkbox" id="faq-4" class="faq-toggle">
+        <label for="faq-4" class="faq-label">
+          <span>How do I cancel?</span><span class="faq-icon">+</span>
+        </label>
+        <div class="faq-content">
+          <p>Netflix is flexible. There are no contracts and no commitments. You can easily cancel your account online in two clicks without cancellation fees.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="cta-email-box">
+      <p class="cta-text" data-lang-key="ctaPrompt">Ready to watch? Enter your email to create or restart your membership.</p>
+      
+      <form class="email-form" action="signup.html">
+        <input type="email" class="email-input" placeholder="Email address" required>
+        <button type="submit" class="btn-cta">
+          <span data-lang-key="getStarted">Get Started</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <div class="feature-divider"></div>
+
+  <!-- Wide-Spread Netflix Landing Footer with Reduced Font -->
+  <footer class="netflix-footer">
+    <p class="footer-questions"><span data-lang-key="questionsCall">Questions? Call 1-800-012-3456</span></p>
+
+    <ul class="footer-links-grid">
+      <li class="footer-link-item"><a href="#">FAQ</a></li>
+      <li class="footer-link-item"><a href="#">Help Center</a></li>
+      <li class="footer-link-item"><a href="#">Account</a></li>
+      <li class="footer-link-item"><a href="#">Media Center</a></li>
+      <li class="footer-link-item"><a href="#">Investor Relations</a></li>
+      <li class="footer-link-item"><a href="#">Jobs</a></li>
+      <li class="footer-link-item"><a href="#">Ways to Watch</a></li>
+      <li class="footer-link-item"><a href="#">Terms of Use</a></li>
+      <li class="footer-link-item"><a href="#">Privacy</a></li>
+      <li class="footer-link-item"><a href="#">Cookie Preferences</a></li>
+      <li class="footer-link-item"><a href="#">Corporate Information</a></li>
+      <li class="footer-link-item"><a href="#">Contact Us</a></li>
+      <li class="footer-link-item"><a href="#">Speed Test</a></li>
+      <li class="footer-link-item"><a href="#">Legal Notices</a></li>
+      <li class="footer-link-item"><a href="#">Only on Netflix</a></li>
+    </ul>
+
+    <!-- Footer Language Selector (English & Hindi) -->
+    <div class="language-picker-box" style="align-self: flex-start;">
+      <span class="language-globe-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </span>
+      <select class="language-select" aria-label="Language Selector">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+      </select>
+      <span class="language-caret"></span>
+    </div>
+
+    <div class="footer-copyright">&copy; 1997-2026 Netflix, Inc. &bull; Netflix Clone</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
