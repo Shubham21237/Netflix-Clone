@@ -146,12 +146,14 @@ img {
 .netflix-logo .netflix-wordmark {
   display: block;
   width: auto;
-  height: 28px;
-  transition: transform 0.2s ease;
+  height: 32px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6));
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.25s ease;
 }
 
 .netflix-logo:hover .netflix-wordmark {
-  transform: scale(1.03);
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 12px rgba(229, 9, 20, 0.75));
 }
 
 .nav-links {
